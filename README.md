@@ -15,6 +15,6 @@ Empresa Metalurgica
 1) Manter cadastro de treinamentos (contéudo, fornecedor, etc.). Atribuir treinamentos à funcionários. Capturar os dados para Currículo. Gerar currículo (relatório) do funcionário, incluindo os treinamentos feitos por ele.
 
 Grupo:
-Daniel
-Elivelton
+Daniel,
+Elivelton e
 Jefferson

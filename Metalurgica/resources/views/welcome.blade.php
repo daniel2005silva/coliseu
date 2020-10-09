@@ -12,7 +12,6 @@
         <!-- Styles -->
         <style>
             html, body {
-                /*background-color: #fff;*/
                 color: black;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -65,11 +64,14 @@
             }
             .links > a:hover {
                 color: red;
-                font-size: 16px;
+                font-size: 13px;
                 background-color: white;
                 border-radius: 5px;
             }
-
+            .title {
+                background-color: white;
+                color: black;
+            }
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -98,7 +100,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="#">Recursos Humanos - RH</a>
+                    <a href="funcionario/">Recursos Humanos - RH</a>
                     <a href="#">Manutenção</a>
                     <a href="#">Suprimentos</a>
                     <a href="#">Vendas</a>

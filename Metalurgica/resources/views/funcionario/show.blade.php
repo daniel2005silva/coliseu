@@ -2,7 +2,9 @@
 @section('titulo','Funcionário')
 @section('corpo')
 	<div class="container">
-		<h3>Funcionário</h3>
+		<br/>
+		<h1 class="center text-dark">FUNCIONÁRIO</h1>
+		<br/>
 		<div class="row">
 			<div class="col-sm-6">
 				<dl>
@@ -42,10 +44,23 @@
 				<form action="/funcionario/{{$funcionario->id}}" method="post" onsubmit="return confirm('Confirma exclusão?')">
 					@csrf
 					@method('DELETE')
-					<input type="submit" value="Excluir" class="btn btn-primary btn-sm">
-					<a href="/funcionario" class="btn btn-primary btn-sm">Voltar</a>
+					<input type="submit" value="Excluir" class="btn btn-light">
+					<a href="/funcionario" class="btn btn-dark">Voltar</a>
 				</form>
 			</div>
 		</div>
 	</div>
 @endsection
+
+<style type="text/css">
+	.center {
+    	text-align:  center;
+	}
+	.col-sm-6{
+		height: 100%;
+
+	}
+	dt{
+		font-size: 20px;
+	}
+</style>

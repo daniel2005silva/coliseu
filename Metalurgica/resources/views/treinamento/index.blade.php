@@ -5,7 +5,7 @@
 <h1 class="text-center text-uppercase text-dark">Treinamentos</h1>
 <br/>
 <table class="table table-striped">
-<tr >
+<tr class="bg-dark text-white">
 	<th>NOME</th>
 	<th>FORNECEDOR</th>
 	<th>ÍNÍCIO</th>
@@ -14,7 +14,7 @@
 </tr>
 <!-- Loop pela coleção de departamentos -->
 @foreach($treinamentos as $t)
-<tr>
+<tr >
 	<td>{{$t->nome}}</td>
 	<td>{{$t->fornecedor}}</td>
 	<td>{{$t->inicio}}</td>
@@ -47,5 +47,8 @@
 <style type="text/css">
 	.center {
     	text-align:  center;
+	}
+	.container{
+		height: 100%;
 	}
 </style>

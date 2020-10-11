@@ -10,25 +10,16 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-	<nav class="navbar navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   		<a class="navbar-brand" href="../">Metalúrgica</a>
-  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Alterna navegação">
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     		<span class="navbar-toggler-icon"></span>
   		</button>
-
-  		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      			<li class="nav-item active">
-        			<a class="nav-link" href="#">Home <span class="sr-only">(Página atual)</span></a>
-      			</li>
-      			<li class="nav-item">
-        			<a class="nav-link" href="#">Link</a>
-      			</li>
-      			<li class="nav-item">
-        			<a class="nav-link disabled" href="#">Desativado</a>
-     			</li>
-    		</ul>
-    		
+  		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    		<div class="navbar-nav">
+      			<a class="nav-item nav-link" href="../funcionario">Funcionários</a>
+      			<a class="nav-item nav-link" href="../treinamento">Treinamentos</a>
+    		</div>
   		</div>
 	</nav>
 	<div class="container">
@@ -38,11 +29,10 @@
 </html>
 <style type="text/css">
 	body{ 
-		background: url("{{ asset('imagens/metalurgica.jpg') }}") no-repeat;
+		background: url("{{ asset('imagens/metalurgica.jpg') }}") no-repeat fixed;
         background-size: cover;
     }
     .container{
-		background-color: white;
-		height: 100%;
+		background-color: #b7bdb9;
 	}
 </style>

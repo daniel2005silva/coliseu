@@ -5,7 +5,7 @@
 <h1 class="text-center text-uppercase text-dark">Funcionários</h1>
 <br/>
 <table class="table table-striped">
-<tr>
+<tr class="bg-dark text-white">
 	<th>NOME</th>
 	<th>DATA DE NASCIMENTO</th>
 	<th>CARGO OCUPADO</th>
@@ -45,5 +45,7 @@
 	.center {
     	text-align:  center;
 	}
-
+	.container{
+		height: 100%;
+	}
 </style>

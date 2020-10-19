@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Fornecedor;
 use App\Treinamento;
 use Illuminate\Http\Request;
 
@@ -12,10 +13,10 @@ class TreinamentoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        //$treinamentos = Treinamento::paginate(5);
-        return View('treinamento.index')->with('treinamentos',Treinamento::find($id)); 
+        $treinamentos = Treinamento::paginate(5);
+        return View('treinamento.index')->with('treinamentos',$treinamentos ); 
     }
 
     /**
@@ -25,7 +26,8 @@ class TreinamentoController extends Controller
      */
     public function create()
     {
-        return View('treinamento.create');
+        $fornecedores = Fornecedor::paginate(5);
+        return View('treinamento.create')->with('fornecedores',$fornecedores); 
     }
 
     /**
@@ -39,20 +41,20 @@ class TreinamentoController extends Controller
         // Valida os dados em $request
         $this->validate($request,
             [
-                'nome' => 'required|max:100',  
-                'fornecedor' => 'required|max:100', 
+                'treinamento' => 'required|max:100',  
+                'descricao' => 'required|max:300', 
                 'conteudo' => 'required|max:1000', 
-                'inicio' => 'required',    // nome obrigatório e no máximo 100 caracteres
-                'fim' => 'required', 
+                'dt_inicio' => 'required',    // nome obrigatório e no máximo 100 caracteres
+                'dt_termino' => 'required', 
                 'tipo' => 'required|max:50'
             ],
             // mensagens de erro quando a validação falha.
             [
-                'nome.*' => 'Nome é obrigatório de tamanho máximo de 100 caracteres.',
-                'fornecedor.*' => 'Fornecedor é obrigatório de tamanho máximo de 100 caracteres.',
+                'treinamento.*' => 'Nome é obrigatório de tamanho máximo de 100 caracteres.',
+                'descricao.*' => 'Descrição é obrigatório de tamanho máximo de 300 caracteres.',
                 'conteudo.*' => 'Conteúdo é obrigatório de tamanho máximo de 1000 caracteres.',
-                'inicio.*' => 'Início é obrigatório.',
-                'fim.*' => 'Fim é obrigatório.',
+                'dt_inicio.*' => 'Data de início é obrigatório.',
+                'dt_termino.*' => 'Data de termino é obrigatório.',
                 'tipo.*' => 'Tipo é obrigatório de tamanho máximo de 50 caracteres.'
             ]
         );
@@ -79,7 +81,8 @@ class TreinamentoController extends Controller
      */
     public function edit($id)
     {
-        return View('treinamento.edit')->with('treinamento',Treinamento::find($id));
+        $fornecedores = Fornecedor::paginate(5);
+        return View('treinamento.edit')->with('treinamento',Treinamento::find($id))->with('fornecedores',$fornecedores);
     }
 
     /**
@@ -92,21 +95,21 @@ class TreinamentoController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,
-            [
-                'nome' => 'required|max:100',  
-                'fornecedor' => 'required|max:100', 
+             [
+                'treinamento' => 'required|max:100',  
+                'descricao' => 'required|max:300', 
                 'conteudo' => 'required|max:1000', 
-                'inicio' => 'required',    // nome obrigatório e no máximo 100 caracteres
-                'fim' => 'required', 
+                'dt_inicio' => 'required',    // nome obrigatório e no máximo 100 caracteres
+                'dt_termino' => 'required', 
                 'tipo' => 'required|max:50'
             ],
             // mensagens de erro quando a validação falha.
             [
-                'nome.*' => 'Nome é obrigatório de tamanho máximo de 100 caracteres.',
-                'fornecedor.*' => 'Fornecedor é obrigatório de tamanho máximo de 100 caracteres.',
+                'treinamento.*' => 'Nome é obrigatório de tamanho máximo de 100 caracteres.',
+                'descricao.*' => 'Descrição é obrigatório de tamanho máximo de 300 caracteres.',
                 'conteudo.*' => 'Conteúdo é obrigatório de tamanho máximo de 1000 caracteres.',
-                'inicio.*' => 'Início é obrigatório.',
-                'fim.*' => 'Fim é obrigatório.',
+                'dt_inicio.*' => 'Data de início é obrigatório.',
+                'dt_termino.*' => 'Data de termino é obrigatório.',
                 'tipo.*' => 'Tipo é obrigatório de tamanho máximo de 50 caracteres.'
             ]
         );

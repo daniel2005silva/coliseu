@@ -25,3 +25,5 @@ Route::resource('fornecedor','FornecedorController');
 
 Route::resource('experienciaprofissional','ExperienciaprofissionalController');
 
+Route::resource('turma','TurmaController');
+

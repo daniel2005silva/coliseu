@@ -18,7 +18,9 @@
   		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     		<div class="navbar-nav">
       			<a class="nav-item nav-link" href="../funcionario">Funcionários</a>
+      			<a class="nav-item nav-link" href="../fornecedor">Fornecedores</a>
       			<a class="nav-item nav-link" href="../treinamento">Treinamentos</a>
+
     		</div>
   		</div>
 	</nav>

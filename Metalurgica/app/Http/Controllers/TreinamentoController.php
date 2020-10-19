@@ -12,10 +12,10 @@ class TreinamentoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $treinamentos = Treinamento::paginate(5);
-        return View('treinamento.index')->with('treinamentos',$treinamentos); 
+        //$treinamentos = Treinamento::paginate(5);
+        return View('treinamento.index')->with('treinamentos',Treinamento::find($id)); 
     }
 
     /**

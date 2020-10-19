@@ -2,7 +2,7 @@
 @section('titulo','Lista de Funcionários')
 @section('corpo')
 <br/>
-<h1 class="text-center text-uppercase text-dark">Funcionários</h1>
+<h1 class="text-center text-uppercase text-dark">FUNCIONÁRIOS</h1>
 <br/>
 <table class="table table-striped">
 <tr class="bg-dark text-white">
@@ -48,4 +48,5 @@
 	.container{
 		height: 100%;
 	}
+
 </style>

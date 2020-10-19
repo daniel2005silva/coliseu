@@ -16,18 +16,20 @@
 					<dd>{{$funcionario->dt_nascimento}}</dd>
 					<dt>Estado Civil</dt>
 					<dd>{{$funcionario->estado_civil}}</dd>
-					<dt>País</dt>
-					<dd>{{$funcionario->pais}}</dd>
-					<dt>Estado</dt>
-					<dd>{{$funcionario->estado}}</dd>
-					<dt>Cidade</dt>
-					<dd>{{$funcionario->cidade}}</dd>
-					<dt>Bairro</dt>
-					<dd>{{$funcionario->bairro}}</dd>
-					<dt>Rua</dt>
-					<dd>{{$funcionario->rua}}</dd>
-					<dt>Número</dt>
-					<dd>{{$funcionario->numero}}</dd>
+					<dt>Nacionalidade</dt>
+					<dd>{{$funcionario->nacionalidade}}</dd>
+					<dt>País onde mora</dt>
+					<dd>{{$funcionario->pais_onde_mora}}</dd>
+					<dt>Estado onde mora</dt>
+					<dd>{{$funcionario->estado_onde_mora}}</dd>
+					<dt>Cidade onde mora</dt>
+					<dd>{{$funcionario->cidade_onde_mora}}</dd>
+					<dt>Bairro onde mora</dt>
+					<dd>{{$funcionario->bairro_onde_mora}}</dd>
+					<dt>Rua onde mora</dt>
+					<dd>{{$funcionario->rua_onde_mora}}</dd>
+					<dt>Número onde mora</dt>
+					<dd>{{$funcionario->numero_onde_mora}}</dd>
 					<dt>Cargo Ocupado</dt>
 					<dd>{{$funcionario->cargo_ocupado}}</dd>
 					<dt>Cargo Desejado</dt>

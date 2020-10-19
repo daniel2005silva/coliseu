@@ -20,3 +20,8 @@ Route::get('/', function () {
 Route::resource('funcionario','FuncionarioController');
 
 Route::resource('treinamento','TreinamentoController');
+
+Route::resource('fornecedor','FornecedorController');
+
+Route::resource('experienciaprofissional','ExperienciaprofissionalController');
+

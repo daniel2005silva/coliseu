@@ -43,50 +43,58 @@
 					</div>
 					<br/>
 					<div>
-						<label for="pais">País</label>
-						<input type="text" name="pais" id="pais" class="form-control" value="{{empty(old('pais')) ? $funcionario->pais : old('pais')}}"/>
-						@if($errors->has('pais'))
-						<p class="text-danger">{{$errors->first('pais')}}</p>
+						<label for="nacionalidade">Nacionalidade</label>
+						<input type="text" name="nacionalidade" id="nacionalidade" class="form-control" value="{{empty(old('nacionalidade')) ? $funcionario->nacionalidade : old('nacionalidade')}}"/>
+						@if($errors->has('nacionalidade'))
+						<p class="text-danger">{{$errors->first('nacionalidade')}}</p>
 						@endif
 					</div>
 					<br/>
 					<div>
-						<label for="estado">Estado</label>
-						<input type="text" name="estado" id="estado" class="form-control" value="{{empty(old('estado')) ? $funcionario->estado : old('estado')}}"/>
-						@if($errors->has('estado'))
-						<p class="text-danger">{{$errors->first('estado')}}</p>
+						<label for="pais_onde_mora">País onde mora</label>
+						<input type="text" name="pais_onde_mora" id="pais_onde_mora" class="form-control" value="{{empty(old('pais_onde_mora')) ? $funcionario->pais_onde_mora : old('pais_onde_mora')}}"/>
+						@if($errors->has('pais_onde_mora'))
+						<p class="text-danger">{{$errors->first('pais_onde_mora')}}</p>
 						@endif
 					</div>
 					<br/>
 					<div>
-						<label for="cidade">Cidade</label>
-						<input type="text" name="cidade" id="cidade" class="form-control" value="{{empty(old('cidade')) ? $funcionario->cidade : old('cidade')}}"/>
-						@if($errors->has('cidade'))
-						<p class="text-danger">{{$errors->first('cidade')}}</p>
+						<label for="estado_onde_mora">Estado onde mora</label>
+						<input type="text" name="estado_onde_mora" id="estado_onde_mora" class="form-control" value="{{empty(old('estado_onde_mora')) ? $funcionario->estado_onde_mora : old('estado_onde_mora')}}"/>
+						@if($errors->has('estado_onde_mora'))
+						<p class="text-danger">{{$errors->first('estado_onde_mora')}}</p>
 						@endif
 					</div>
 					<br/>
 					<div>
-						<label for="bairro">Bairro</label>
-						<input type="text" name="bairro" id="bairro" class="form-control" value="{{empty(old('bairro')) ? $funcionario->bairro : old('bairro')}}"/>
-						@if($errors->has('bairro'))
-						<p class="text-danger">{{$errors->first('bairro')}}</p>
+						<label for="cidade_onde_mora">Cidade onde mora</label>
+						<input type="text" name="cidade_onde_mora" id="cidade_onde_mora" class="form-control" value="{{empty(old('cidade_onde_mora')) ? $funcionario->cidade_onde_mora : old('cidade_onde_mora')}}"/>
+						@if($errors->has('cidade_onde_mora'))
+						<p class="text-danger">{{$errors->first('cidade_onde_mora')}}</p>
 						@endif
 					</div>
 					<br/>
 					<div>
-						<label for="rua">Rua</label>
-						<input type="text" name="rua" id="rua" class="form-control" value="{{empty(old('rua')) ? $funcionario->rua : old('rua')}}"/>
-						@if($errors->has('rua'))
-						<p class="text-danger">{{$errors->first('rua')}}</p>
+						<label for="bairro_onde_mora">Bairro onde mora</label>
+						<input type="text" name="bairro_onde_mora" id="bairro_onde_mora" class="form-control" value="{{empty(old('bairro_onde_mora')) ? $funcionario->bairro_onde_mora : old('bairro_onde_mora')}}"/>
+						@if($errors->has('bairro_onde_mora'))
+						<p class="text-danger">{{$errors->first('bairro_onde_mora')}}</p>
 						@endif
 					</div>
 					<br/>
 					<div>
-						<label for="numero">Número</label>
-						<input type="number" name="numero" id="numero" class="form-control" value="{{empty(old('numero')) ? $funcionario->numero : old('numero')}}"/>
-						@if($errors->has('numero'))
-						<p class="text-danger">{{$errors->first('numero')}}</p>
+						<label for="rua_onde_mora">Rua onde mora</label>
+						<input type="text" name="rua_onde_mora" id="rua_onde_mora" class="form-control" value="{{empty(old('rua_onde_mora')) ? $funcionario->rua_onde_mora : old('rua_onde_mora')}}"/>
+						@if($errors->has('rua_onde_mora'))
+						<p class="text-danger">{{$errors->first('rua_onde_mora')}}</p>
+						@endif
+					</div>
+					<br/>
+					<div>
+						<label for="numero_onde_mora">Número onde mora</label>
+						<input type="number" name="numero_onde_mora" id="numero_onde_mora" class="form-control" value="{{empty(old('numero_onde_mora')) ? $funcionario->numero_onde_mora : old('numero_onde_mora')}}"/>
+						@if($errors->has('numero_onde_mora'))
+						<p class="text-danger">{{$errors->first('numero_onde_mora')}}</p>
 						@endif
 					</div>
 					<br/>

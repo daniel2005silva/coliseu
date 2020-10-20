@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Treinamento;
+use App\Funcionario;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,3 +28,8 @@ Route::resource('experienciaprofissional','ExperienciaprofissionalController');
 
 Route::resource('turma','TurmaController');
 
+Route::get('/turma/create/{id}', function ($id) {
+	$funcionarios = Funcionario::paginate(5);
+	$treinamento = Treinamento::find($id);
+    return View('turma/create')->with('treinamento',$treinamento)->with('funcionarios',$funcionarios);
+});

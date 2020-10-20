@@ -24,7 +24,7 @@
 	<th>
 		<a href="/treinamento/{{$t->id}}" class="btn btn-secondary btn-sm">Detalhe</a>
 		<a href="/treinamento/{{$t->id}}/edit" class="btn btn-dark btn-sm">Editar</a>
-		<a href="../turma/create" class="btn btn-primary btn-sm">Atribuir</a>
+		<a href="../turma/create/{{$t->id}}" class="btn btn-dark btn-sm">Atribuir</a>	
 	</th>
 </tr> 
 @endforeach

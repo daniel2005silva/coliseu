@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Treinamento;
 use App\Turma;
+use App\Funcionario;
 use Illuminate\Http\Request;
 
 class TurmaController extends Controller
@@ -14,7 +16,8 @@ class TurmaController extends Controller
      */
     public function index()
     {
-        //
+        $turmas = Turma::paginate(5);
+        return View('turma.index')->with('turmas',$turmas );
     }
 
     /**
@@ -22,9 +25,12 @@ class TurmaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id_treinamento)
     {
-        //
+    	$funcionarios = Funcionario::paginate(5);
+        $treinamento = Treinamento::find($id_treinamento);
+        $turmas = Turmas::paginate(5);
+        return View('turma.create')->with('turmas',$turmas)->with('treinamento',$treinamento)->with('funcionarios',$funcionarios); 
     }
 
     /**
@@ -35,7 +41,19 @@ class TurmaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $this->validate($request,
+            [
+                'funcionario_id' => 'required',  
+                'treinamento_id' => 'required'
+            ],
+            // mensagens de erro quando a validação falha.
+            [
+                'funcionario_id.*' => 'Id do funcionário é obrigatório.',
+                'treinamento_id.*' => 'Id do treinamento é obrigatório.'
+            ]
+        );
+        Turma::create($request->all());
+        return redirect('/turma');
     }
 
     /**
@@ -44,9 +62,10 @@ class TurmaController extends Controller
      * @param  \App\Turma  $turma
      * @return \Illuminate\Http\Response
      */
-    public function show(Turma $turma)
+    public function show($id)
     {
-        //
+    	$turmas = Turma::paginate(5);
+        return View('turma.show')->with('turma',Turma::find($id))->with('turmas',$turmas);
     }
 
     /**
@@ -55,9 +74,12 @@ class TurmaController extends Controller
      * @param  \App\Turma  $turma
      * @return \Illuminate\Http\Response
      */
-    public function edit(Turma $turma)
+    public function edit($id)
     {
-        //
+    	$funcionarios = Funcionario::paginate(5);
+        $turmas = Turma::paginate(5);
+        $treinamento = Treinamento::find(Turma::find($id)->treinamento_id);
+        return View('turma.edit')->with('turma',Turma::find($id))->with('treinamento',$treinamento)->with('funcionarios',$funcionarios);
     }
 
     /**
@@ -67,9 +89,22 @@ class TurmaController extends Controller
      * @param  \App\Turma  $turma
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Turma $turma)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,
+             [
+                'funcionario_id' => 'required',  
+                'treinamento_id' => 'required'
+            ],
+            // mensagens de erro quando a validação falha.
+            [
+                'funcionario_id.*' => 'Id do funcionário é obrigatório.',
+                'treinamento_id.*' => 'Id do treinamento é obrigatório.'
+            ]
+        );
+        $turma = Turma::find($id);  
+        $turma->update($request->all()); 
+        return redirect('/turma');
     }
 
     /**
@@ -78,8 +113,9 @@ class TurmaController extends Controller
      * @param  \App\Turma  $turma
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Turma $turma)
+    public function destroy($id)
     {
-        //
+        Treinamento::destroy($id);
+        return redirect('/treinamento');
     }
 }

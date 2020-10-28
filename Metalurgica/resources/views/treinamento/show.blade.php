@@ -11,7 +11,11 @@
 					<dt class="text-dark">Nome</dt>
 					<dd>{{$treinamento->treinamento}}</dd>
 					<dt class="text-dark">Fornecedor</dt>
-					<dd>{{$treinamento->fornecedor_id}}</dd>
+					<dd>
+						@foreach($fornecedor = $treinamento->fornecedor()->get() as $f)
+							{{$f->empresa}}
+						@endforeach
+					</dd>
 					<dt class="text-dark">Descrição</dt>
 					<dd>{{$treinamento->descricao}}</dd>
 					<dt class="text-dark">Conteúdo</dt>

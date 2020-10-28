@@ -60,7 +60,9 @@ class FornecedorController extends Controller
      */
     public function show($id)
     {
-         return View('fornecedor.show')->with('fornecedor',Fornecedor::find($id));
+        $f = Fornecedor::find($id);
+        $t= $f->treinamentos()->get();
+         return View('fornecedor.show')->with('fornecedor',$f)->with('treinamentos',$t);
     }
 
     /**

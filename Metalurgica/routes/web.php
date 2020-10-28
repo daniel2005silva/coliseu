@@ -24,7 +24,7 @@ Route::resource('treinamento','TreinamentoController');
 
 Route::resource('fornecedor','FornecedorController');
 
-Route::resource('experienciaprofissional','ExperienciaprofissionalController');
+Route::resource('experienciaprofissional','ExperienciaProfissionalController');
 
 Route::resource('turma','TurmaController');
 
@@ -32,4 +32,9 @@ Route::get('/turma/create/{id}', function ($id) {
 	$funcionarios = Funcionario::paginate(5);
 	$treinamento = Treinamento::find($id);
     return View('turma/create')->with('treinamento',$treinamento)->with('funcionarios',$funcionarios);
+});
+
+Route::get('/experienciaprofissional/create/{id}', function ($id) {
+	$funcionario_id = Funcionario::find($id);
+    return View('experienciaProfissional/create')->with('funcionario_id',$funcionario_id);
 });

@@ -53,7 +53,7 @@ class TurmaController extends Controller
             ]
         );
         Turma::create($request->all());
-        return redirect('/turma');
+        return redirect('/turma/');
     }
 
     /**

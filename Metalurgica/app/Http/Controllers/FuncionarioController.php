@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Funcionario;
 use Illuminate\Http\Request;
+use App\ExperienciaProfissional;
 
 class FuncionarioController extends Controller
 {
@@ -94,7 +95,9 @@ class FuncionarioController extends Controller
      */
     public function show($id)
     {
-        return View('funcionario.show')->with('funcionario',Funcionario::find($id));
+        $f=Funcionario::find($id);
+        $e= $f->experiencias()->get();
+        return View('funcionario.show')->with('funcionario',$f)->with('experiencias',$e);
     }
 
     /**
@@ -172,6 +175,11 @@ class FuncionarioController extends Controller
      */
     public function destroy($id)
     {
+        $f=Funcionario::find($id);
+        $experiencias = $f->experiencias()->get();
+        foreach ($experiencias as $e) {
+            ExperienciaProfissional::destroy($e->id);
+        }
         Funcionario::destroy($id);
         return redirect('/funcionario');
     }

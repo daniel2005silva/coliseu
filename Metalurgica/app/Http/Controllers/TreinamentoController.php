@@ -14,7 +14,7 @@ class TreinamentoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
         $treinamentos = Treinamento::paginate(5);
         return View('treinamento.index')->with('treinamentos',$treinamentos ); 
     }

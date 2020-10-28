@@ -10,7 +10,6 @@
 	<th>DATA DE INÍCIO</th>
 	<th>DATA DE TÉRMINO</th>
 	<th>FORNECEDOR</th>
-	<th>TURMA</th>
 	<th>COMANDO</th>
 </tr>
 <!-- Loop pela coleção de departamentos -->
@@ -19,8 +18,11 @@
 	<td>{{$t->treinamento}}</td>
 	<td>{{$t->dt_inicio}}</td>
 	<td>{{$t->dt_termino}}</td>
-	<td>{{$t->fornecedor_id}}</td>
-	<td>{{$t->turma}}</td>
+	<td>
+		@foreach($fornecedor = $t->fornecedor()->get() as $f)
+			{{$f->empresa}}
+		@endforeach
+	</td>
 	<th>
 		<a href="/treinamento/{{$t->id}}" class="btn btn-secondary btn-sm">Detalhe</a>
 		<a href="/treinamento/{{$t->id}}/edit" class="btn btn-dark btn-sm">Editar</a>

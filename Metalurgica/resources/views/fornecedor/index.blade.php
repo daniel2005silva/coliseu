@@ -18,7 +18,6 @@
 	<td class="text-right">
 		<a href="/fornecedor/{{$fs->id}}" class="btn btn-secondary btn-sm">Detalhe</a>
 		<a href="/fornecedor/{{$fs->id}}/edit" class="btn btn-dark btn-sm">Editar</a>
-		<a href="/treinamento/{{$fs->id}}" class="btn btn-light btn-sm">Treinamentos</a>
 	</td>
 </tr> 
 @endforeach

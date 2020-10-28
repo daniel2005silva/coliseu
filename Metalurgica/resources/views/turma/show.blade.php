@@ -9,10 +9,12 @@
 			<div class="col-sm-6">
 				<dl>
 					<dt class="text-dark">Treinamento</dt>
-					<dd>{{$turma->treinamento_id}}</dd>
+					@foreach($treinamento as $t)
+							<dd>{{$t->treinamento}}</dd>
+					@endforeach
 					<dt class="text-dark">Alunos</dt>
-					@foreach($turmas as $ts)
-						<dd>{{$ts->funcionario_id}}</dd>
+					@foreach($funcionarios as $f)
+						<dd>{{$f->nome}} {{$f->sobrenome}}</dd>
 					@endforeach
 				</dl>
 				<form action="/turma/{{$turma->id}}" method="post" onsubmit="return confirm('Confirma exclusão?')">

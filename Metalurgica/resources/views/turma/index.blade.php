@@ -15,7 +15,11 @@
 @foreach($turmas as $ts)
 <tr >
 	<td>{{$ts->created_at}}</td>
-	<td>{{$ts->treinamento_id}}</td>
+	<td>
+		@foreach($treinamento = $ts->treinamento()->get() as $t)
+			{{$t->treinamento}}
+		@endforeach
+	</td>
 	<td></td>
 	<th>
 		<a href="/turma/{{$ts->id}}" class="btn btn-secondary btn-sm">Detalhe</a>

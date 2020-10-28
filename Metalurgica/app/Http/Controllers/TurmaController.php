@@ -64,8 +64,10 @@ class TurmaController extends Controller
      */
     public function show($id)
     {
-    	$turmas = Turma::paginate(5);
-        return View('turma.show')->with('turma',Turma::find($id))->with('turmas',$turmas);
+        $turma = Turma::find($id);
+        $treinamento = $turma->treinamento()->get();
+    	$funcionarios = $turma->funcionario()->get();
+        return View('turma.show')->with('turma',$turma)->with('funcionarios',$funcionarios)->with('treinamento',$treinamento);
     }
 
     /**

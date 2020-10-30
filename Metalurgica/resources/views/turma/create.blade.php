@@ -7,36 +7,44 @@
 		<br/>
 		<div class="row">
 			<div class="col-sm-6">
-				<form action="/turma" method="post">
-					@csrf  <!-- token de segurança -->
+				
+					
 					<div class="form-group">
 						<label for="treinamento_id" class="text-dark">Treinamento</label>
 						<p>
 							{{$treinamento->treinamento}}
-							<input type="hidden" name="treinamento_id" id="treinamento_id" value="{{$treinamento->id}}">
+							
 						</p>
-						@if($errors->has('treinamento_id'))
-						<p class="text-danger">{{$errors->first('treinamento_id')}}</p>
-						@endif
+						
 					</div>
 					<br/>
 					<div class="form-group">
 						<label for="funcionarios" class="text-dark">Funcionários</label>
 						@foreach($funcionarios as $f)
 							<p>
-								<input type="checkbox" name="funcionario_id" id="funcionario_id" value="{{$f->id}}">{{$f->nome}} {{$f->sobrenome}}
+								<form action="/turma" method="post">
+									@csrf  <!-- token de segurança -->
+								<input type="hidden" name="treinamento_id" id="treinamento_id" value="{{$treinamento->id}}">
+								@if($errors->has('treinamento_id'))
+									<p class="text-danger">{{$errors->first('treinamento_id')}}</p>
+								@endif
+								<input type="hidden" name="funcionario_id" id="funcionario_id" value="{{$f->id}}">
+								<button class="btn btn-light">{{$f->nome}} {{$f->sobrenome}}</button>
+								@if($errors->has('funcionario_id'))
+									<p class="text-danger">{{$errors->first('funcionario_id')}}</p>
+								@endif
+								<input type="submit" value="Atribuir" class="btn btn-dark btn-sm"/>
+								</form>
 							</p>
 						@endforeach
-						@if($errors->has('funcionarios'))
-						<p class="text-danger">{{$errors->first('funcionarios')}}</p>
-						@endif
+						
 					</div>
 					<br/>
 					<div class="form-group">
-		    				<input type="submit" value="Atribuir" class="btn btn-light"/>
+		    				
 		    				<a href="../treinamento" class="btn btn-dark">Voltar</a>
 		    		</div>
-				</form>
+				
 			</div>
 		</div>
 	</div>

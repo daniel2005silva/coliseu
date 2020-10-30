@@ -70,7 +70,9 @@ class TreinamentoController extends Controller
      */
     public function show($id)
     {
-         return View('treinamento.show')->with('treinamento',Treinamento::find($id));
+        $t = Treinamento::find($id);
+        $f = $t->funcionarios()->get();
+         return View('treinamento.show')->with('treinamento', $t)->with('funcionarios', $f);
     }
 
     /**

@@ -11,4 +11,8 @@ class Funcionario extends Model
     public function experiencias() {
     	return $this->hasMany('App\ExperienciaProfissional');
     }
+
+    public function treinamentos() {
+    	return $this->belongsToMany('App\Treinamento');
+    }
 }

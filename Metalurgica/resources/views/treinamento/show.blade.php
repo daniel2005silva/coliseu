@@ -27,6 +27,14 @@
 					<dt class="text-dark">Tipo</dt>
 					<dd>{{$treinamento->tipo}}</dd>
 				</dl>
+				<div class="col-sm-12" style="text-align: center">
+				<hr style="border-color: black" />
+				<h4><b >FUNCIONARIOS</b></h4>
+				<hr style="border-color: black" />
+			</div>
+			@foreach($funcionarios as $f)
+							{{$f->nome}}
+			@endforeach
 				<form action="/treinamento/{{$treinamento->id}}" method="post" onsubmit="return confirm('Confirma exclusão?')">
 					@csrf
 					@method('DELETE')

@@ -12,5 +12,8 @@ class Treinamento extends Model
     	return $this->belongsTo('App\Fornecedor');
     }
 
+     public function funcionarios() {
+    	return $this->belongsToMany('App\Funcionario');
+    }
     
 }

@@ -65,6 +65,37 @@
 				<dt>Idiomas:</dt>
 					<dd>&nbsp&nbsp&nbsp&nbsp&nbsp{{$funcionario->idiomas}}</dd>
 			</div>
+
+			<div class="col-sm-12" style="text-align: center">
+				<hr style="border-color: black" />
+				<h4><b >TREINAMENTOS</b></h4>
+				<hr style="border-color: black" />
+			</div>
+			<table class="table table-striped">
+				<tr class="bg-dark text-white">
+					<th>Nome</th>
+					<th>Fornecedor</th>
+					<th>Descrição</th>
+					<th>Início</th>
+					<th>Término</th>
+				</tr>
+				@foreach($treinamentos as $t)
+				<tr>
+					<td>&nbsp&nbsp&nbsp&nbsp&nbsp{{$t->treinamento}}</td>
+			
+					<td>&nbsp&nbsp&nbsp&nbsp&nbsp{{$t->empresa}}</td>
+
+					<td>&nbsp&nbsp&nbsp&nbsp&nbsp{{$t->descricao}}</td>
+				
+					<td>&nbsp&nbsp&nbsp&nbsp&nbsp{{$t->dt_inicio}}</td>
+				
+					<td>&nbsp&nbsp&nbsp&nbsp&nbsp{{$t->dt_termino}}</td>
+
+					
+				</tr>	
+				@endforeach
+			</table>
+
 			<div class="col-sm-12" style="text-align: center">
 				<hr style="border-color: black" />
 				<h4><b >EXPERIÊNCIA PROFISSIONAL</b></h4>

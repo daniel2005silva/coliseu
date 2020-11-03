@@ -42,7 +42,7 @@
 					<br/>
 					<div class="form-group">
 		    				
-		    				<a href="../treinamento" class="btn btn-dark">Voltar</a>
+		    				<a href="../../treinamento" class="btn btn-dark">Voltar</a>
 		    		</div>
 				
 			</div>
@@ -54,5 +54,7 @@
 	.center {
     	text-align:  center;
 	}
-	
+	.container{
+		height: 100%;
+	}
 </style>

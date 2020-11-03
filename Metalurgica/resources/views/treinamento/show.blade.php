@@ -27,21 +27,41 @@
 					<dt class="text-dark">Tipo</dt>
 					<dd>{{$treinamento->tipo}}</dd>
 				</dl>
+
+				</div>
+
 				<div class="col-sm-12" style="text-align: center">
 				<hr style="border-color: black" />
-				<h4><b >FUNCIONARIOS</b></h4>
+				<h4><b >FUNCIONÁRIOS</b></h4>
 				<hr style="border-color: black" />
-			</div>
-			@foreach($funcionarios as $f)
-							{{$f->nome}}
-			@endforeach
+				</div>
+				<table class="table table-striped">
+				<tr class="bg-dark text-white">
+					<th>Nome</th>
+					<th>Comando</th>
+				</tr>
+				@foreach($funcionarios as $f)
+				<tr>
+					<td>{{$f->nome}} {{$f->sobrenome}}</td>
+					<td>
+						<form action="../../turma/{{$f->turma_id}}" method="post" onsubmit="return confirm('Confirma exclusão?')">
+							@csrf
+							@method('DELETE')
+							<input type="submit" value="Excluir" class="btn btn-light btn-sm">
+						</form>
+					</td>
+				</tr>
+				@endforeach
+			</table>
+			<br/>
+			<br/>
 				<form action="/treinamento/{{$treinamento->id}}" method="post" onsubmit="return confirm('Confirma exclusão?')">
 					@csrf
 					@method('DELETE')
 					<input type="submit" value="Excluir" class="btn btn-light">
 					<a href="/treinamento" class="btn btn-dark">Voltar</a>
 				</form>
-			</div>
+			
 		</div>
 	</div>
 @endsection
@@ -49,9 +69,7 @@
 	.center {
     	text-align:  center;
 	}
-	.container{
-		height: 100%;
-	}
+	
 	dt{
 		font-size: 20px;
 	}

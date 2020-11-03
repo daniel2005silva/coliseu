@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Fornecedor;
 use App\Treinamento;
+use App\FuncionarioTreinamento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TreinamentoController extends Controller
 {
@@ -71,8 +73,10 @@ class TreinamentoController extends Controller
     public function show($id)
     {
         $t = Treinamento::find($id);
-        $f = $t->funcionarios()->get();
-         return View('treinamento.show')->with('treinamento', $t)->with('funcionarios', $f);
+        $funcionarios = DB::select('select funcionarios.*, funcionario_treinamentos.treinamento_id as pivot_treinamento_id, funcionario_treinamentos.funcionario_id as pivot_funcionario_id,
+            funcionario_treinamentos.id as turma_id
+            from funcionarios inner join funcionario_treinamentos on funcionarios.id = funcionario_treinamentos.funcionario_id where funcionario_treinamentos.treinamento_id = ?', [$id]);
+         return View('treinamento.show')->with('treinamento', $t)->with('funcionarios', $funcionarios);
     }
 
     /**

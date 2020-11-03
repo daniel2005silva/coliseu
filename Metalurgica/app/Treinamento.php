@@ -16,4 +16,7 @@ class Treinamento extends Model
     	return $this->belongsToMany('App\Funcionario');
     }
     
+    public function turma() {
+    	return $this->belongsTo('App\FuncionarioTreinamento');
+    }
 }

@@ -123,7 +123,10 @@ class FuncionarioTreinamentoController extends Controller
      */
     public function destroy($id)
     {
+        $turma = Funcionario_treinamento::find($id);
         Funcionario_treinamento::destroy($id);
-        return redirect('/treinamento');
+        $t = $turma->treinamento_id; 
+        //return this.show(intval($t));
+        return redirect()->route('treinamento.show', [$t]);
     }
 }

@@ -15,4 +15,6 @@ class Funcionario extends Model
     public function treinamentos() {
     	return $this->belongsToMany('App\Treinamento');
     }
+
+   
 }

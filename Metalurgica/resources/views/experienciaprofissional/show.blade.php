@@ -25,7 +25,7 @@
 					@csrf
 					@method('DELETE')
 					<input type="submit" value="Excluir" class="btn btn-light">
-					<a href="../../funcionario/" class="btn btn-dark">Voltar</a>
+					<a href="../../funcionario/{{$f->id}}" class="btn btn-dark">Voltar</a>
 				</form>
 			</div>
 		</div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ExperienciaProfissional;
+use App\Funcionario;
 use Illuminate\Http\Request;
 
 class ExperienciaProfissionalController extends Controller
@@ -54,7 +55,10 @@ class ExperienciaProfissionalController extends Controller
             ]
         );
         ExperienciaProfissional::create($request->all());
-        return redirect('../../funcionario/');
+        $funcionario = Funcionario::find($request->funcionario_id);
+        //return this.show(intval($t));
+        return redirect()->route('funcionario.show', [$funcionario]);
+        //return redirect('../../funcionario/');
     }
 
     /**
@@ -111,7 +115,10 @@ class ExperienciaProfissionalController extends Controller
         );
         $experienciasprofissionais = ExperienciaProfissional::find($id);  
         $experienciasprofissionais->update($request->all()); 
-        return redirect('../../funcionario/');
+        $funcionario = Funcionario::find($request->funcionario_id);
+       
+        return redirect()->route('funcionario.show', [$funcionario]);
+        //return redirect('../../funcionario/');
     }
     /**
      * Remove the specified resource from storage.

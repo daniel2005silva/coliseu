@@ -1,6 +1,7 @@
 @extends('master')
 @section('titulo','Funcionário')
 @section('corpo')
+<?php use Carbon\Carbon; ?>
 	<div class="container">
 		<br/>
 		<h1 class="center text-dark"><b>FUNCIONÁRIO {{$funcionario->id}}</b></h1>
@@ -126,6 +127,41 @@
 				</tr>	
 				@endforeach
 			</table>
+			<?php
+				//criamos o arquivo
+				$arquivo = fopen('./Curriculos/' . $funcionario->nome . $funcionario->sobrenome . '.txt','w');
+				//verificamos se foi criado
+				if ($arquivo == false) die('Não foi possível criar o arquivo.');
+				//escrevemos no arquivo
+				$dataAtual = date('Y/m/d');		
+				$texto = 	$funcionario->nome . ' ' . $funcionario->sobrenome . " \n ";
+				$texto .=  $funcionario->nacionalidade . ' - ' . $funcionario->estado_civil . ' - ' . 
+				intval(Carbon::now()->diffInDays(Carbon::createFromFormat('Y-m-d', $funcionario->dt_nascimento)) / 365.25)
+				. ' anos';
+				$texto .= " \n " . $funcionario->rua_onde_mora . ', ' . $funcionario->numero_onde_mora . ', ' . $funcionario->bairro_onde_mora . ', ' . $funcionario->cidade_onde_mora . ', ' . $funcionario->estado_onde_mora;
+				$texto .= " \n \n";
+				$texto .= 'OBJETIVO' . " \n" . $funcionario->cargo_desejado;
+				$texto .= " \n \n";
+				$texto .= 'FORMAÇÃO ACADÊMICA' . " \n" . $funcionario->formacao_academica;
+				$texto .= " \n \n";
+				$texto .= 'IDIOMA' . " \n" . $funcionario->idiomas;
+				$texto .= " \n \n";
+				$texto .= 'EXPERIÊNCIA PROFISSIONAL' . " \n";
+				foreach($experiencias as $e) {
+					$texto .= '      ' . $e->empresa . ' - ' . $e->ano . " \n";
+					$texto .= '      ' . $e->cargo_ocupado . " \n";
+					$texto .= '      ' . $e->responsabilidades . " \n \n";
+				}
+				$texto .= 'TREINAMENTOS' . " \n";
+				foreach($treinamentos as $t) {
+					$texto .= '      ' . $t->treinamento . ' - ' . $t->empresa . " \n";
+					$texto .= '      ' . $t->dt_inicio . ' - ' . $t->dt_termino . " \n \n";
+				}
+				fwrite($arquivo, $texto);
+				//Fechamos o arquivo após escrever nele
+				fclose($arquivo);
+
+			?>
 			<div class="col-sm-12">
 					<br/><br/>
 				<form action="/funcionario/{{$funcionario->id}}" method="post" onsubmit="return confirm('Confirma exclusão?')">

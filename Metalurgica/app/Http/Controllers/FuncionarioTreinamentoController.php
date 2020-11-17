@@ -32,7 +32,7 @@ class FuncionarioTreinamentoController extends Controller
         $funcionarios = DB::select('select * from funcionarios where id not in (select f.id from funcionarios f, funcionario_treinamentos ft where f.id = ft.funcionario_id and ft.treinamento_id = ?)', [$id_treinamento]);
         //$funcionarios = Funcionario::all();
         $treinamento = Treinamento::find($id_treinamento);
-        $turmas = Funcionario_treinamento::paginate(5);
+        $turmas = Funcionario_treinamento::all();
         return View('turma.create')->with('turmas',$turmas)->with('treinamento',$treinamento)->with('funcionarios',$funcionarios); 
     }
 

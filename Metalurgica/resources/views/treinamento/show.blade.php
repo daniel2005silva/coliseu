@@ -9,23 +9,23 @@
 			<div class="col-sm-6">
 				<dl>
 					<dt class="text-dark">Nome</dt>
-					<dd>{{$treinamento->treinamento}}</dd>
+					<dd>&nbsp&nbsp&nbsp&nbsp&nbsp{{$treinamento->treinamento}}</dd>
 					<dt class="text-dark">Fornecedor</dt>
 					<dd>
 						@foreach($fornecedor = $treinamento->fornecedor()->get() as $f)
-							{{$f->empresa}}
+							&nbsp&nbsp&nbsp&nbsp&nbsp{{$f->empresa}}
 						@endforeach
 					</dd>
 					<dt class="text-dark">Descrição</dt>
-					<dd>{{$treinamento->descricao}}</dd>
+					<dd>&nbsp&nbsp&nbsp&nbsp&nbsp{{$treinamento->descricao}}</dd>
 					<dt class="text-dark">Conteúdo</dt>
-					<dd>{{$treinamento->conteudo}}</dd>
+					<dd>&nbsp&nbsp&nbsp&nbsp&nbsp{{$treinamento->conteudo}}</dd>
 					<dt class="text-dark">Data de início</dt>
-					<dd>{{$treinamento->dt_inicio}}</dd>
+					<dd>&nbsp&nbsp&nbsp&nbsp&nbsp{{$treinamento->dt_inicio}}</dd>
 					<dt class="text-dark">Data de termino</dt>
-					<dd>{{$treinamento->dt_termino}}</dd>
+					<dd>&nbsp&nbsp&nbsp&nbsp&nbsp{{$treinamento->dt_termino}}</dd>
 					<dt class="text-dark">Tipo</dt>
-					<dd>{{$treinamento->tipo}}</dd>
+					<dd>&nbsp&nbsp&nbsp&nbsp&nbsp{{$treinamento->tipo}}</dd>
 				</dl>
 
 				</div>
@@ -36,18 +36,18 @@
 				<hr style="border-color: black" />
 				</div>
 				<table class="table table-striped">
-				<tr class="bg-dark text-white">
+				<tr class="bg-dark text-white" style="text-align: center;">
 					<th>Nome</th>
-					<th>Comando</th>
+					<th style="width: 150px">Comando</th>
 				</tr>
 				@foreach($funcionarios as $f)
 				<tr>
 					<td>{{$f->nome}} {{$f->sobrenome}}</td>
-					<td>
+					<td style="text-align: center;">
 						<form action="../../turma/{{$f->turma_id}}" method="post" onsubmit="return confirm('Confirma exclusão?')">
 							@csrf
 							@method('DELETE')
-							<input type="submit" value="Excluir" class="btn btn-light btn-sm">
+							<input type="submit" value="Excluir" class="btn btn-light btn-sm" style="position: absolute;">
 						</form>
 					</td>
 				</tr>

@@ -128,7 +128,10 @@ class ExperienciaProfissionalController extends Controller
      */
     public function destroy($id)
     {
+        $experiencia = experienciaProfissional::find($id);
+        $f = $experiencia->funcionario_id;
         ExperienciaProfissional::destroy($id);
-        return redirect('../../funcionario/');
+       
+        return redirect()->route('funcionario.show', [$f]);
     }
 }

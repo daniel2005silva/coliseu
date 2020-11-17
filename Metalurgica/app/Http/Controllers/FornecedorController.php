@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Fornecedor;
+use App\Treinamento;
+use App\Funcionario_treinamento;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class FornecedorController extends Controller
@@ -109,6 +112,16 @@ class FornecedorController extends Controller
      */
     public function destroy($id)
     {
+        $forn = Fornecedor::find($id);
+        $treinamentos = $forn->treinamentos()->get();
+        foreach ($treinamentos as $t) {
+            $treinamentosFuncionario = DB::select('select funcionario_treinamentos.*
+            from  fornecedors, treinamentos inner join funcionario_treinamentos on treinamentos.id = ? where  treinamentos.fornecedor_id = fornecedors.id', [$t->id]);
+            foreach ($treinamentosFuncionario as $tf) {
+                Funcionario_treinamento::destroy($tf->id);
+            }
+           Treinamento::destroy($t->id);
+        }
         Fornecedor::destroy($id);
         return redirect('/fornecedor');
     }

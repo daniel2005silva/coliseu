@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Fornecedor;
 use App\Treinamento;
-use App\FuncionarioTreinamento;
+use App\Funcionario_treinamento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -28,7 +28,7 @@ class TreinamentoController extends Controller
      */
     public function create()
     {
-        $fornecedores = Fornecedor::paginate(5);
+        $fornecedores = Fornecedor::all();
         return View('treinamento.create')->with('fornecedores',$fornecedores); 
     }
 
@@ -132,7 +132,17 @@ class TreinamentoController extends Controller
      */
     public function destroy($id)
     {
+        $t = Treinamento::find($id);
+        $funcionarios = DB::select('select funcionarios.* from funcionarios inner join funcionario_treinamentos on funcionarios.id = funcionario_treinamentos.funcionario_id where funcionario_treinamentos.treinamento_id = ?', [$id]);
+        foreach($funcionarios as $f) {
+            $valores = DB::select('select funcionario_treinamentos.id from funcionarios inner join funcionario_treinamentos on funcionarios.id = ? where funcionario_treinamentos.treinamento_id = ?', [$f->id, $id]);
+             foreach($valores as $v) {
+                Funcionario_treinamento::destroy($v->id);
+             }
+            
+        }
         Treinamento::destroy($id);
         return redirect('/treinamento');
+
     }
 }

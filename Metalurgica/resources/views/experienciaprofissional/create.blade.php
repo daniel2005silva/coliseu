@@ -11,7 +11,7 @@
 					@csrf  <!-- token de segurança -->
 					@csrf  <!-- token de segurança -->
 					<div class="form-group">
-						<label for="funcionario_id">Funcionario</label>
+						<label for="funcionario_id">Funcionário</label>
 						<input type="text" name="funcionario" id="funcionario" class="form-control" value="{{$funcionario_id->nome}} {{$funcionario_id->sobrenome}}" disabled/>
 						<input type="hidden" name="funcionario_id" id="funcionario_id" class="form-control" value="{{$funcionario_id->id}}"/>
 					</div>
@@ -50,7 +50,7 @@
 					<br/>
 					<div class="form-group">
 		    				<input type="submit" value="Atribuir" class="btn btn-light"/>
-		    				<a href="../../funcionario" class="btn btn-dark">Voltar</a>
+		    				<a href="../../funcionario/{{$funcionario_id->id}}" class="btn btn-dark">Voltar</a>
 		    		</div>
 				</form>
 			</div>

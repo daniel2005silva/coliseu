@@ -46,7 +46,7 @@
 					</tr>
 					@endforeach
 				</table>
-				<br/>
+				
 				<form action="/fornecedor/{{$fornecedor->id}}" method="post" onsubmit="return confirm('Confirma exclusão?')">
 					@csrf
 					@method('DELETE')
@@ -54,6 +54,7 @@
 					<a href="/fornecedor" class="btn btn-dark">Voltar</a>
 				</form>
 		</div>
+		<br/><br/>
 	</div>
 @endsection
 
@@ -69,6 +70,6 @@
 		font-size: 20px;
 	}
 	.container{
-		height: 100%;
+		
 	}
 </style>

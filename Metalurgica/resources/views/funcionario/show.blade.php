@@ -73,8 +73,8 @@
 				<hr style="border-color: black" />
 			</div>
 			<table class="table table-striped">
-				<tr class="bg-dark text-white">
-					<th>Nome</th>
+				<tr class="bg-dark text-white" style="text-align: center">
+					<th>Nome do treinamento</th>
 					<th>Fornecedor</th>
 					<th>Descrição</th>
 					<th>Início</th>
@@ -96,19 +96,19 @@
 				</tr>	
 				@endforeach
 			</table>
-
+				
 			<div class="col-sm-12" style="text-align: center">
 				<hr style="border-color: black" />
 				<h4><b >EXPERIÊNCIA PROFISSIONAL</b></h4>
 				<hr style="border-color: black" />
 			</div>
 			<table class="table table-striped">
-				<tr class="bg-dark text-white">
-					<th>Nome da empresa:</th>
-					<th>Cargo ocupado:</th>
-					<th>Ano:</th>
-					<th>Responsabilidades:</th>
-					<th>Comando:</th>
+				<tr class="bg-dark text-white" style="text-align: center">
+					<th>Nome da empresa</th>
+					<th>Cargo ocupado</th>
+					<th>Ano</th>
+					<th>Responsabilidades</th>
+					<th>Comando</th>
 				</tr>
 				@foreach($experiencias as $e)
 				<tr>
@@ -120,7 +120,7 @@
 				
 					<td>&nbsp&nbsp&nbsp&nbsp&nbsp{{$e->responsabilidades}}</td>
 
-					<td style="width: 150px">
+					<td style="width: 150px; text-align: right">
 						<a href="../../experienciaprofissional/{{$e->id}}" class="btn btn-secondary btn-sm">Detalhe</a>
 						<a href="../../experienciaprofissional/{{$e->id}}/edit" class="btn btn-dark btn-sm">Editar</a>
 					</td>
@@ -152,7 +152,7 @@
 					$texto .= '      ' . $e->cargo_ocupado . " \n";
 					$texto .= '      ' . $e->responsabilidades . " \n \n";
 				}
-				$texto .= 'TREINAMENTOS' . " \n";
+				$texto .= " \n" . 'TREINAMENTOS' . " \n";
 				foreach($treinamentos as $t) {
 					$texto .= '      ' . $t->treinamento . ' - ' . $t->empresa . " \n";
 					$texto .= '      ' . $t->dt_inicio . ' - ' . $t->dt_termino . " \n \n";

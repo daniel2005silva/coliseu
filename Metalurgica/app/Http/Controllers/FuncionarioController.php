@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Funcionario;
 use Illuminate\Http\Request;
 use App\ExperienciaProfissional;
+use App\Funcionario_treinamento;
 use Illuminate\Support\Facades\DB;
 
 class FuncionarioController extends Controller
@@ -180,6 +181,11 @@ class FuncionarioController extends Controller
     public function destroy($id)
     {
         $f=Funcionario::find($id);
+        $treinamentos = DB::select('select funcionario_treinamentos.*
+            from  fornecedors, treinamentos inner join funcionario_treinamentos on treinamentos.id = funcionario_treinamentos.treinamento_id where funcionario_treinamentos.funcionario_id = ? and treinamentos.fornecedor_id = fornecedors.id', [$id]);
+        foreach ($treinamentos as $t) {
+            Funcionario_treinamento::destroy($t->id);
+        }
         $experiencias = $f->experiencias()->get();
         foreach ($experiencias as $e) {
             ExperienciaProfissional::destroy($e->id);

@@ -9,7 +9,7 @@
 	<th>NOME</th>
 	<th>DATA DE NASCIMENTO</th>
 	<th>CARGO OCUPADO</th>
-	<th>COMANDO</th>
+	<th style="text-align: center; width: 150px">COMANDO</th>
 </tr>
 <!-- Loop pela coleção de funcionários -->
 @foreach($funcionarios as $f)
@@ -17,7 +17,7 @@
 	<td>{{$f->nome}}</td>
 	<td>{{$f->dt_nascimento}}</td>
 	<td>{{$f->cargo_ocupado}}</td>
-	<td>
+	<td style="text-align: right">
 		<a href="/funcionario/{{$f->id}}" class="btn btn-secondary btn-sm">Detalhe</a>
 		<a href="/funcionario/{{$f->id}}/edit" class="btn btn-dark btn-sm">Editar</a>
 	</td>

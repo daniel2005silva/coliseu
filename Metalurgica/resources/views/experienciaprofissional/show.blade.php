@@ -10,16 +10,16 @@
 				<dl>
 					<dt class="text-dark">Funcionário</dt>
 					@foreach($funcionario as $f)
-					<dd>{{$f->nome}} {{$f->sobrenome}}</dd>
+					<dd>&nbsp&nbsp&nbsp&nbsp&nbsp{{$f->nome}} {{$f->sobrenome}}</dd>
 					@endforeach
 					<dt class="text-dark">Empresa</dt>
-					<dd>{{$experienciaprofissional->empresa}}</dd>
+					<dd>&nbsp&nbsp&nbsp&nbsp&nbsp{{$experienciaprofissional->empresa}}</dd>
 					<dt class="text-dark">Cargo ocupado</dt>
-					<dd>{{$experienciaprofissional->cargo_ocupado}}</dd>
+					<dd>&nbsp&nbsp&nbsp&nbsp&nbsp{{$experienciaprofissional->cargo_ocupado}}</dd>
 					<dt class="text-dark">Ano</dt>
-					<dd>{{$experienciaprofissional->ano}}</dd>
+					<dd>&nbsp&nbsp&nbsp&nbsp&nbsp{{$experienciaprofissional->ano}}</dd>
 					<dt class="text-dark">Responsabilidades</dt>
-					<dd>{{$experienciaprofissional->responsabilidades}}</dd>
+					<dd>&nbsp&nbsp&nbsp&nbsp&nbsp{{$experienciaprofissional->responsabilidades}}</dd>
 				</dl>
 				<form action="/experienciaprofissional/{{$experienciaprofissional->id}}" method="post" onsubmit="return confirm('Confirma exclusão?')">
 					@csrf

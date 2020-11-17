@@ -38,3 +38,5 @@ Route::get('/experienciaprofissional/create/{id}', function ($id) {
 	$funcionario_id = Funcionario::find($id);
     return View('experienciaProfissional/create')->with('funcionario_id',$funcionario_id);
 });
+
+Route::get('/curriculo', function () {   return view('funcionario.curriculo'); });

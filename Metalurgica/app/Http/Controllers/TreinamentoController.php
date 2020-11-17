@@ -18,7 +18,8 @@ class TreinamentoController extends Controller
     public function index()
     {   
         $treinamentos = Treinamento::paginate(5);
-        return View('treinamento.index')->with('treinamentos',$treinamentos ); 
+        $totalTreinamentos = DB::select('select count(id) as total from  treinamentos');
+        return View('treinamento.index')->with('treinamentos',$treinamentos )->with('totalTreinamentos',$totalTreinamentos ); 
     }
 
     /**

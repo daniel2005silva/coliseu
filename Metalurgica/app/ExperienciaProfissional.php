@@ -11,4 +11,6 @@ class ExperienciaProfissional extends Model
      public function funcionario() {
      	return $this->belongsTo('App\Funcionario');
      }
+
+     
 }

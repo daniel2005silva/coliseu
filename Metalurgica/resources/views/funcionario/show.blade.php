@@ -129,7 +129,7 @@
 			</table>
 			<?php
 				//criamos o arquivo
-				$arquivo = fopen('./Curriculos/' . $funcionario->nome . $funcionario->sobrenome . '.txt','w');
+				$arquivo = fopen('./Curriculos/' . $funcionario->nome . ' ' . $funcionario->sobrenome . '.txt','w');
 				//verificamos se foi criado
 				if ($arquivo == false) die('Não foi possível criar o arquivo.');
 				//escrevemos no arquivo

@@ -18,7 +18,8 @@ class FornecedorController extends Controller
     public function index()
     {
          $fornecedores = Fornecedor::paginate(5);
-        return View('fornecedor.index')->with('fornecedores',$fornecedores); 
+         $totalFornecedores = DB::select('select count(id) as total from  fornecedors');
+        return View('fornecedor.index')->with('fornecedores',$fornecedores)->with('totalFornecedores',$totalFornecedores);  
     }
 
     /**

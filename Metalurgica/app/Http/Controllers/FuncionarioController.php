@@ -19,8 +19,9 @@ class FuncionarioController extends Controller
     {
         // busca dois usuários por vez no BD
         $funcionarios = Funcionario::paginate(5);
+        $totalFuncionarios = DB::select('select count(id) as total from  funcionarios');
         // Aciona View, passando a ela coleção dos funcionários obtidos no BD   
-        return View('funcionario.index')->with('funcionarios',$funcionarios); 
+        return View('funcionario.index')->with('funcionarios',$funcionarios)->with('totalFuncionarios',$totalFuncionarios); 
     }
 
     /**

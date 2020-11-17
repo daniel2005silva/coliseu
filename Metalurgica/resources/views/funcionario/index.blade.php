@@ -2,7 +2,12 @@
 @section('titulo','Lista de Funcionários')
 @section('corpo')
 <br/>
+@foreach($totalFuncionarios as $tlf)
+	<p class="btn btn-primary" style="position: absolute; margin-left: 1000px">Total: {{$tlf->total}}</p>
+@endforeach
 <h1 class="text-center text-uppercase text-dark">FUNCIONÁRIOS</h1>
+
+
 <br/>
 <table class="table table-striped">
 <tr class="bg-dark text-white">
@@ -33,7 +38,7 @@
     	{{ $funcionarios->links() }}
     </div>
     <div class="col center">
-		<a href="../treinamento/" class="btn btn-dark btn-sm">Visualizar Treinamentos</a>
+		<a href="../curriculo/" class="btn btn-dark btn-sm">Visualizar Currículos</a>
 	</div>
   </div>
 

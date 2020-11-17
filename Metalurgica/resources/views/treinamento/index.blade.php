@@ -2,6 +2,9 @@
 @section('titulo','Lista de Treinamentos')
 @section('corpo')
 <br/>
+@foreach($totalTreinamentos as $tlt)
+	<p class="btn btn-primary" style="position: absolute; margin-left: 1000px">Total: {{$tlt->total}}</p>
+@endforeach
 <h1 class="text-center text-uppercase text-dark">Treinamentos</h1>
 <br/>
 <table class="table table-striped">

@@ -2,6 +2,9 @@
 @section('titulo','Lista de Fornecedores')
 @section('corpo')
 <br/>
+@foreach($totalFornecedores as $tlf)
+	<p class="btn btn-primary" style="position: absolute; margin-left: 1000px">Total: {{$tlf->total}}</p>
+@endforeach
 <h1 class="text-center text-uppercase text-dark">FORNECEDORES</h1>
 <br/>
 <table class="table table-striped">

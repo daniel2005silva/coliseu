@@ -115,7 +115,8 @@
 					<br/>
 					<div class="form-group">
 						<label for="responsabilidades">Responsabilidades</label>
-						<input type="textarea" name="responsabilidades" id="responsabilidades" class="form-control" value="{{old('responsabilidades')}}"/>
+						<textarea name="responsabilidades" id="responsabilidades" class="form-control" value="{{old('responsabilidades')}}">
+						</textarea>
 						@if($errors->has('responsabilidades'))
 						<p class="text-danger">{{$errors->first('responsabilidades')}}</p>
 						@endif
@@ -123,7 +124,8 @@
 					<br/>
 					<div class="form-group">
 						<label for="formacao_academica">Formação Acadêmica</label>
-						<input type="text" name="formacao_academica" id="formacao_academica" class="form-control" value="{{old('formacao_academica')}}"/>
+						<textarea name="formacao_academica" id="formacao_academica" class="form-control" value="{{old('formacao_academica')}}">Digite: nome da formação - ano de início - ano de término
+						</textarea>
 						@if($errors->has('formacao_academica'))
 						<p class="text-danger">{{$errors->first('formacao_academica')}}</p>
 						@endif
@@ -131,7 +133,8 @@
 					<br/>
 					<div class="form-group">
 						<label for="certificados">Certificados</label>
-						<input type="text" name="certificados" id="certificados" class="form-control" value="{{old('certificados')}}"/>
+						<textarea name="certificados" id="certificados" class="form-control" value="{{old('certificados')}}">Digite: nome do certificado - ano de início - ano de término
+						</textarea>
 						@if($errors->has('certificados'))
 						<p class="text-danger">{{$errors->first('certificados')}}</p>
 						@endif
@@ -156,5 +159,7 @@
 	.center {
     	text-align:  center;
 	}
-	
+	.container{
+		height: 360%;
+	}
 </style>

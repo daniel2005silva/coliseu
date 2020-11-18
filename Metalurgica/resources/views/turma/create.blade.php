@@ -3,7 +3,9 @@
 @section('corpo')
 	<div class="container">
 		<br/>
-		<h1 class="text-center text-uppercase text-dark">NOVA TURMA</h1>
+		<hr style="border-color: black" />
+		<h1 class="text-center text-uppercase text-dark"><b>NOVA TURMA</b></h1>
+		<hr style="border-color: black" />
 		<br/>
 		<div class="row">
 			<div class="col-sm-6">
@@ -12,7 +14,7 @@
 					<div class="form-group">
 						<label for="treinamento_id" class="text-dark">Treinamento</label>
 						<p>
-							{{$treinamento->treinamento}}
+							&nbsp&nbsp&nbsp&nbsp&nbsp{{$treinamento->treinamento}}
 							
 						</p>
 						
@@ -33,7 +35,7 @@
 								@if($errors->has('funcionario_id'))
 									<p class="text-danger">{{$errors->first('funcionario_id')}}</p>
 								@endif
-								<input type="submit" value="Atribuir" class="btn btn-dark btn-sm"/>
+								<input type="submit" value="Atribuir" class="btn btn-primary"/>
 								</form>
 							</p>
 						@endforeach

@@ -1,6 +1,7 @@
 @extends('master')
 @section('titulo','Experiência profissional')
 @section('corpo')
+<div class="container">
 <br/>
 <h1 class="text-center text-uppercase text-dark">EXPERIÊNCIA PROFISSIONAL DO </h1>
 <br/>
@@ -40,7 +41,7 @@
   </div>
 
 
-
+</div>
 @endsection
 
 

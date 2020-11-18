@@ -31,7 +31,8 @@
 					<br/>
 					<div>
 						<label for="descricao" class="text-dark">Descrição</label>
-						<input type="text" name="descricao" id="descricao" class="form-control" value="{{old('descricao')}}"/>
+						<textarea name="descricao" id="descricao" class="form-control" value="{{old('descricao')}}">
+							</textarea>
 						@if($errors->has('descricao'))
 						<p class="text-danger">{{$errors->first('descricao')}}</p>
 						@endif
@@ -39,7 +40,8 @@
 					<br/>
 					<div>
 						<label for="conteudo" class="text-dark">Conteúdo</label>
-						<input type="text" name="conteudo" id="conteudo" class="form-control" value="{{old('conteudo')}}"/>
+						<textarea name="conteudo" id="conteudo" class="form-control" value="{{old('conteudo')}}">
+							</textarea>
 						@if($errors->has('conteudo'))
 						<p class="text-danger">{{$errors->first('conteudo')}}</p>
 						@endif
@@ -83,5 +85,7 @@
 	.center {
     	text-align:  center;
 	}
-	
+	.container{
+		height: 100%;
+	}
 </style>

@@ -8,6 +8,8 @@ use App\ExperienciaProfissional;
 use App\Funcionario_treinamento;
 use Illuminate\Support\Facades\DB;
 
+use File;
+
 class FuncionarioController extends Controller
 {
     /**
@@ -193,5 +195,10 @@ class FuncionarioController extends Controller
         }
         Funcionario::destroy($id);
         return redirect('/funcionario');
+    }
+
+    public function deleteArquivos($nomeArquivo) {
+        File::delete("./Curriculos/$nomeArquivo");
+        return redirect('/curriculo');
     }
 }

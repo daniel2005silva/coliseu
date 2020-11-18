@@ -3,7 +3,9 @@
 @section('corpo')
 	<div class="container">
 		<br/>
-		<h1 class="text-center text-uppercase text-dark">Treinamento</h1>
+		<hr style="border-color: black" />
+		<h1 class="text-center text-uppercase text-dark" ><b>Treinamento</b></h1>
+		<hr style="border-color: black" />
 		<br/>
 		<div class="row">
 			<div class="col-sm-6">
@@ -69,7 +71,9 @@
 	.center {
     	text-align:  center;
 	}
-	
+	.container{
+		height: 100%;
+	}
 	dt{
 		font-size: 20px;
 	}

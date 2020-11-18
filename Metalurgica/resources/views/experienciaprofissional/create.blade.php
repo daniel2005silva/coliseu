@@ -3,7 +3,9 @@
 @section('corpo')
 	<div class="container">
 		<br/>
-		<h1 class="text-center text-uppercase text-dark">NOVA EXPERIÊNCIA PROFISSIONAL</h1>
+		<hr style="border-color: black" />
+		<h1 class="text-center text-uppercase text-dark"><b>NOVA EXPERIÊNCIA PROFISSIONAL</b></h1>
+		<hr style="border-color: black" />
 		<br/>
 		<div class="row">
 			<div class="col-sm-6">
@@ -42,7 +44,8 @@
 					<br/>
 					<div class="form-group">
 						<label for="responsabilidades">Responsabilidades</label>
-						<input type="text" name="responsabilidades" id="responsabilidades" class="form-control" value="{{old('responsabilidades')}}"/>
+						<textarea name="responsabilidades" id="responsabilidades" class="form-control" value="{{old('responsabilidades')}}">
+							</textarea>
 						@if($errors->has('responsabilidades'))
 						<p class="text-danger">{{$errors->first('responsabilidades')}}</p>
 						@endif
@@ -62,5 +65,7 @@
 	.center {
     	text-align:  center;
 	}
-	
+	.container{
+		height: 100%;
+	}
 </style>

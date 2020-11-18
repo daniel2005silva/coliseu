@@ -36,7 +36,9 @@ Route::get('/turma/create/{id}', 'FuncionarioTreinamentoController@create'/*func
 
 Route::get('/experienciaprofissional/create/{id}', function ($id) {
 	$funcionario_id = Funcionario::find($id);
-    return View('experienciaProfissional/create')->with('funcionario_id',$funcionario_id);
+    return View('experienciaprofissional/create')->with('funcionario_id',$funcionario_id);
 });
 
 Route::get('/curriculo', function () {   return view('funcionario.curriculo'); });
+
+Route::get('/curriculo/{nomeArquivo}', 'FuncionarioController@deleteArquivos');

@@ -1,6 +1,7 @@
 @extends('master')
 @section('titulo','Lista de Fornecedores')
 @section('corpo')
+<div>
 <br/>
 @foreach($totalFornecedores as $tlf)
 	<p class="btn btn-primary" style="position: absolute; margin-left: 1000px">Total: {{$tlf->total}}</p>
@@ -38,7 +39,7 @@
 	</div>
   </div>
 
-
+</div>
 @endsection
 
 
@@ -46,8 +47,6 @@
 	.center {
     	text-align:  center;
 	}
-	.container{
-		height: 100%;
-	}
+	
 	
 </style>

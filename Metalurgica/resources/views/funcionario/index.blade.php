@@ -1,6 +1,7 @@
 @extends('master')
 @section('titulo','Lista de Funcionários')
 @section('corpo')
+<div >
 <br/>
 @foreach($totalFuncionarios as $tlf)
 	<p class="btn btn-primary" style="position: absolute; margin-left: 1000px">Total: {{$tlf->total}}</p>
@@ -42,7 +43,7 @@
 	</div>
   </div>
 
-
+</div>
 @endsection
 
 
@@ -50,8 +51,6 @@
 	.center {
     	text-align:  center;
 	}
-	.container{
-		height: 100%;
-	}
+	
 
 </style>

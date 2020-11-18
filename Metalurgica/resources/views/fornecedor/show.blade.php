@@ -3,7 +3,9 @@
 @section('corpo')
 	<div class="container">
 		<br/>
-		<h1 class="center text-dark">FORNECEDOR</h1>
+		<hr style="border-color: black" />
+		<h1 class="center text-dark"><b>FORNECEDOR</b></h1>
+		<hr style="border-color: black" />
 		<br/>
 		<div class="row">
 			<div class="col-sm-6">
@@ -70,6 +72,6 @@
 		font-size: 20px;
 	}
 	.container{
-		
+		height: 100%;
 	}
 </style>

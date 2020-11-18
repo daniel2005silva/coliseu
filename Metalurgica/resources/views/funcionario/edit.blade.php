@@ -3,7 +3,9 @@
 @section('corpo')
 	<div class="container">
 		<br/>
-		<h1 class="center text-dark">ALTERAR FUNCIONÁRIO</h1>
+		<hr style="border-color: black" />
+		<h1 class="center text-dark"><b>ALTERAR FUNCIONÁRIO</b></h1>
+		<hr style="border-color: black" />
 		<br/>
 		<div class="row">
 			<div class="col-sm-6">

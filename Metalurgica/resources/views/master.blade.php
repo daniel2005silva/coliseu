@@ -20,10 +20,11 @@
       			<a class="nav-item nav-link" href="../../funcionario">Funcionários</a>
       			<a class="nav-item nav-link" href="../../fornecedor">Fornecedores</a>
       			<a class="nav-item nav-link" href="../../treinamento">Treinamentos</a>
+      			<a class="nav-item nav-link" href="../../curriculo">Currículos</a>
     		</div>
   		</div>
 	</nav>
-	<div class="container">
+	<div class="fundo">
 	@yield('corpo')
 	</div>
 </body>
@@ -33,8 +34,11 @@
 		background: url("{{ asset('imagens/metalurgica.jpg') }}") no-repeat fixed;
         background-size: cover;
     }
-    .container{
+    .fundo{
 		background-color: #b7bdb9;
+		width: 80%;
+		margin: auto;
+		height: 300%
 	}
 	
 </style>

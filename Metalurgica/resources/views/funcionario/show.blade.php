@@ -4,6 +4,7 @@
 <?php use Carbon\Carbon; ?>
 	<div class="container">
 		<br/>
+		<hr style="border-color: black" />
 		<h1 class="center text-dark"><b>FUNCIONÁRIO {{$funcionario->id}}</b></h1>
 		<hr style="border-color: black" />
 		<br/>
@@ -186,5 +187,8 @@
 	}
 	dt{
 		font-size: 20px;
+	}
+	.container{
+		height: 100%;
 	}
 </style>

@@ -1,6 +1,7 @@
 @extends('master')
 @section('titulo','Lista de Treinamentos')
 @section('corpo')
+<div >
 <br/>
 @foreach($totalTreinamentos as $tlt)
 	<p class="btn btn-primary" style="position: absolute; margin-left: 1000px">Total: {{$tlt->total}}</p>
@@ -48,7 +49,7 @@
   </div>
 
 
-
+</div>
 @endsection
 
 
@@ -56,7 +57,5 @@
 	.center {
     	text-align:  center;
 	}
-	.container{
-		height: 100%;
-	}
+	
 </style>

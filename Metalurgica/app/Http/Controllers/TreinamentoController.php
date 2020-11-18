@@ -44,6 +44,7 @@ class TreinamentoController extends Controller
         // Valida os dados em $request
         $this->validate($request,
             [
+                'fornecedor_id' => 'required',
                 'treinamento' => 'required|max:100',  
                 'descricao' => 'required|max:300', 
                 'conteudo' => 'required|max:1000', 
@@ -53,6 +54,7 @@ class TreinamentoController extends Controller
             ],
             // mensagens de erro quando a validação falha.
             [
+                'fornecedor_id.*' => 'É preciso ter o nome do fornecedor. Caso não exista crie um fornecedor.',
                 'treinamento.*' => 'Nome é obrigatório de tamanho máximo de 100 caracteres.',
                 'descricao.*' => 'Descrição é obrigatório de tamanho máximo de 300 caracteres.',
                 'conteudo.*' => 'Conteúdo é obrigatório de tamanho máximo de 1000 caracteres.',
@@ -103,6 +105,7 @@ class TreinamentoController extends Controller
     {
         $this->validate($request,
              [
+                'fornecedor_id' => 'required',
                 'treinamento' => 'required|max:100',  
                 'descricao' => 'required|max:300', 
                 'conteudo' => 'required|max:1000', 
@@ -112,6 +115,7 @@ class TreinamentoController extends Controller
             ],
             // mensagens de erro quando a validação falha.
             [
+                'fornecedor_id.*' => 'É preciso ter o nome do fornecedor. Caso não exista crie um fornecedor.',
                 'treinamento.*' => 'Nome é obrigatório de tamanho máximo de 100 caracteres.',
                 'descricao.*' => 'Descrição é obrigatório de tamanho máximo de 300 caracteres.',
                 'conteudo.*' => 'Conteúdo é obrigatório de tamanho máximo de 1000 caracteres.',

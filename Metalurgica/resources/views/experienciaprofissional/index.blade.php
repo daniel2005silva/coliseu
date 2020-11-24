@@ -30,7 +30,7 @@
 
   <div class="row">
     <div class="col center">
-		<a href="./create" class="btn btn-dark btn-sm">Adicionar Nova Experiência</a>
+		<a href="./create" class="btn btn-primary btn-sm">Adicionar Nova Experiência</a>
 	</div>
     <div class="col-md-auto">
 		{{$experienciasprofissionais->links() }}

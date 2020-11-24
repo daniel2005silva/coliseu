@@ -189,6 +189,6 @@
 		font-size: 20px;
 	}
 	.container{
-		height: 100%;
+		
 	}
 </style>

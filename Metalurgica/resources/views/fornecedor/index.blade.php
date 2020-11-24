@@ -1,7 +1,7 @@
 @extends('master')
 @section('titulo','Lista de Fornecedores')
 @section('corpo')
-<div>
+<div class="fundoFor">
 <br/>
 @foreach($totalFornecedores as $tlf)
 	<p class="btn btn-primary" style="position: absolute; margin-left: 1000px">Total: {{$tlf->total}}</p>
@@ -29,7 +29,7 @@
 
  <div class="row">
     <div class="col center">
-		<a href="/fornecedor/create" class="btn btn-dark btn-sm">Adicionar Novo Fornecedor</a>
+		<a href="/fornecedor/create" class="btn btn-primary btn-sm">Adicionar Novo Fornecedor</a>
 	</div>
     <div class="col-md-auto">
     	{{ $fornecedores->links() }}
@@ -47,6 +47,7 @@
 	.center {
     	text-align:  center;
 	}
-	
-	
+	.fundoFor{
+		height: 100%;
+	}
 </style>

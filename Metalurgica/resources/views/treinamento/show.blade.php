@@ -72,7 +72,7 @@
     	text-align:  center;
 	}
 	.container{
-		height: 100%;
+
 	}
 	dt{
 		font-size: 20px;

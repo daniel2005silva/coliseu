@@ -31,7 +31,7 @@
 
   <div class="row">
     <div class="col center">
-		<a href="../treinamento/" class="btn btn-dark btn-sm">Adicionar Nova Turma</a>
+		<a href="../treinamento/" class="btn btn-primary btn-sm">Adicionar Nova Turma</a>
 	</div>
     <div class="col-md-auto">
 		{{$turmas->links() }}

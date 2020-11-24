@@ -35,10 +35,10 @@
         background-size: cover;
     }
     .fundo{
-		background-color: #b7bdb9;
+		background-color: white;
+		background-size: cover;
 		width: 80%;
 		margin: auto;
-		height: 300%
 	}
 	
 </style>

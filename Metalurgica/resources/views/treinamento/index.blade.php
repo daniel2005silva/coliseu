@@ -1,7 +1,7 @@
 @extends('master')
 @section('titulo','Lista de Treinamentos')
 @section('corpo')
-<div >
+<div class="fundoTre">
 <br/>
 @foreach($totalTreinamentos as $tlt)
 	<p class="btn btn-primary" style="position: absolute; margin-left: 1000px">Total: {{$tlt->total}}</p>
@@ -38,7 +38,7 @@
 
   <div class="row">
     <div class="col center">
-		<a href="/treinamento/create" class="btn btn-dark btn-sm">Adicionar Novo Treinamento</a>
+		<a href="/treinamento/create" class="btn btn-primary btn-sm">Adicionar Novo Treinamento</a>
 	</div>
     <div class="col-md-auto">
 		{{$treinamentos->links() }}
@@ -57,5 +57,7 @@
 	.center {
     	text-align:  center;
 	}
-	
+	.fundoTre{
+		height: 100%;
+	}
 </style>

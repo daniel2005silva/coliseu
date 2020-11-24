@@ -1,7 +1,7 @@
 @extends('master')
 @section('titulo','Lista de Funcionários')
 @section('corpo')
-<div >
+<div class="fundoFun">
 <br/>
 @foreach($totalFuncionarios as $tlf)
 	<p class="btn btn-primary" style="position: absolute; margin-left: 1000px">Total: {{$tlf->total}}</p>
@@ -33,7 +33,7 @@
 
   <div class="row">
     <div class="col center">
-		<a href="/funcionario/create" class="btn btn-dark btn-sm">Adicionar Novo Funcionário</a>
+		<a href="/funcionario/create" class="btn btn-primary btn-sm">Adicionar Novo Funcionário</a>
 	</div>
     <div class="col-md-auto">
     	{{ $funcionarios->links() }}
@@ -51,6 +51,8 @@
 	.center {
     	text-align:  center;
 	}
-	
+	.fundoFun{
+		height: 100%;
+	}
 
 </style>

@@ -160,6 +160,6 @@
     	text-align:  center;
 	}
 	.container{
-		height: 360%;
+		
 	}
 </style>
